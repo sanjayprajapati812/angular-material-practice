@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>Add Product</h1>
+<form [formGroup]="productListForm" (ngSubmit)="onSubmit()">
+<div mat-dialog-content>
+    
+        <label for="name">First Name: </label>
+        <input class="form-control" id="first-name" type="text" formControlName="name">
+    
+        <label for="price">Price: </label>
+        <input class="form-control"  id="last-name" type="text" formControlName="price">
+
+        <label for="description">Decription: </label>
+        <input class="form-control"  id="last-name" type="text" formControlName="description">
+    
+    </div>
+    <div mat-dialog-actions>
+        <button type="button" mat-button (click)="onNoClick()">No Thanks</button>
+        <button type="submit" [disabled]="!productListForm.valid" mat-button [mat-dialog-close]>{{controlBtn}}</button>
+    </div>
+</form>

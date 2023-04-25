@@ -1,0 +1,6 @@
+<div class="container p-0">
+    <div class="shipping" *ngFor="let sp of shippingPrices|async">
+        <p>{{sp.type}}</p>
+        <p>{{sp.price|currency}}</p>
+    </div>
+</div>

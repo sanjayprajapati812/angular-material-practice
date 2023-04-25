@@ -1,0 +1,33 @@
+<div class="container p-4 main">
+    <div class="my-4">
+        <div>
+        </div>
+        <div>
+            <button mat-raised-button color="primary" (click)="openDialog()">Add New Product</button>
+        </div>
+    </div>
+    <div>
+        <div class="bg-dark px-3 py-3 my-2 d-flex justify-content-between" *ngFor="let product of products">
+            <div>
+                <div>
+                    <a [title]="product.name + ' details'" 
+                    [routerLink]="['/products', product.id]"
+                    class="text-white text-large">{{product.name}}</a>
+                </div>
+                <div>
+                    <p class="text-white text-large">{{product.price}}</p>
+                </div>
+                <div *ngIf="product.description">
+                    <p class="text-white">{{product.description}}</p>
+                </div>
+                <button (click)="share()" class="btn btn-primary">Share</button>
+                <app-product-alerts [product]="product" (notify)="onNotify()"></app-product-alerts>
+            </div>
+            <div>
+                <button (click)="editProduct(product)">edit</button>
+                <button (click)="removeProduct(product.id)">delete</button>
+            </div>
+        </div>
+    </div>
+    <!-- <mat-slide-toggle>Toggle me!</mat-slide-toggle> -->
+</div>

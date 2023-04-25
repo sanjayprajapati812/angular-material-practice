@@ -1,0 +1,11 @@
+<div class="container">
+    <a [routerLink]="['/shipping']">Shipping details</a>
+    <div *ngIf="products.length==0" class="cart">Nothig here please add products from product details</div>
+    <div class="cart" *ngFor="let product of products">
+        <p>{{product.name}}</p>
+        <p>{{product.price|currency}}</p>
+    </div>
+    <div>
+        <span>Amount To Pay : {{getTotalPrice}}</span>
+    </div>
+</div>

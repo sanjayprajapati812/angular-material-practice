@@ -1,0 +1,12 @@
+<div class="container p-4 main">
+    <h3>product-details</h3>
+    <div *ngIf="product">
+
+    </div>
+    <p>{{product?.name}}</p>
+    <p>{{product?.price|currency}}</p>
+    <p>{{product?.description}}</p>
+
+    <button *ngIf="product" class="btn btn-primary" (click)="addToCart(product)">Buy</button>
+    <!-- <mat-slide-toggle>Toggle me!</mat-slide-toggle> -->
+</div>
