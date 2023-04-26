@@ -15,7 +15,7 @@ export class ProductCartComponent implements OnInit {
   ngOnInit(): void {
     if (this.products.length > 0) {
       this.getTotalPrice = this.products.reduce((acc, e) => {
-        console.log(acc, e);
+        //console.log(acc, e);
         acc += e.price
         return acc
       }, 0)
